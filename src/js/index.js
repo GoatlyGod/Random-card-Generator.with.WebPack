@@ -8,7 +8,8 @@ import "../style/index.scss";
 
 window.onload = () => {
   document.querySelector(".card").classList.add(generateRandomSuit());
-  document.querySelector(".card").classList.add(generateRandomNumber());
+  document.querySelector(".number").innerHTML = generateRandomNumber();
+  console.log(generateRandomSuit());
 };
 
 let generateRandomNumber = () => {
@@ -25,15 +26,15 @@ let generateRandomNumber = () => {
     "9",
     "10",
     "J",
-    "K",
-    "Q"
+    "Q",
+    "K"
   ];
   let indexNumbers = Math.floor(Math.random() * numbers.length);
   return numbers[indexNumbers];
 };
 
 let generateRandomSuit = () => {
-  let suit = ["suit-diamonds", "suit-spades", "suit-hearts", "suit-clubs"];
+  let suit = ["diamond", "spade", "heart", "club"];
   let indexSuit = Math.floor(Math.random() * suit.length);
   return suit[indexSuit];
 };
