@@ -6,9 +6,13 @@ import "../assets/img/4geeks.ico";
 //import 'breathecode-dom'; //DOM override to make JS easier to use
 import "../style/index.scss";
 
-window.onload = function() {
-  const suit = ["Diamonds", "Spades", "Hearts", "Clubs"];
-  const cardNumber = [
+window.onload = () => {
+  document.querySelector(".card").classList.add(generateRandomSuit());
+  document.querySelector(".card").classList.add(generateRandomNumber());
+};
+
+let generateRandomNumber = () => {
+  let numbers = [
     "A",
     "1",
     "2",
@@ -24,25 +28,12 @@ window.onload = function() {
     "K",
     "Q"
   ];
-
-  const suitElementNum = Math.floor(Math.random() * suit.length);
-  const cardNumberElementNum = Math.floor(Math.random() * cardNumber.length);
-  const suitElement = suit[suitElementNum];
-  const cardNumberElement = cardNumber[cardNumberElementNum];
-
-  this.document.getElementById("cardContent").innerHTML = cardNumberElement;
-  this.document.getElementById("theCard").add = suitElement;
+  let indexNumbers = Math.floor(Math.random() * numbers.length);
+  return numbers[indexNumbers];
 };
 
-function getSuitClass(suit) {
-  switch (suit) {
-    case "Diamonds":
-      return "suit-diamonds";
-    case "Spades":
-      return "suit-spades";
-    case "Hearts":
-      return "suit-hearts";
-    case "Clubs":
-      return "suit-clubs";
-  }
-}
+let generateRandomSuit = () => {
+  let suit = ["suit-diamonds", "suit-spades", "suit-hearts", "suit-clubs"];
+  let indexSuit = Math.floor(Math.random() * suit.length);
+  return suit[indexSuit];
+};
