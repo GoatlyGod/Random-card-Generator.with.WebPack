@@ -3,116 +3,46 @@
 body {
   background: green;
 }
-.centered {
-  margin-left: auto;
-  margin-right: auto;
-  width: 300px;
-}
-a.button {
-  display: block;
-  width: 300px;
-  height: 50px;
-  background: SandyBrown;
-  font-family: Arial;
-  text-decoration: none;
-  font-size: 25px;
-  line-height: 50px;
-  text-align: center;
-  color: #444;
-  font-weight: bold;
-  border-radius: 5px;
-  box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.3);
-  margin-top: 20px;
-}
-a.button:hover {
-  background: #f7bf90;
-}
-
 .card {
-  width: 300px;
-  height: 440px;
-  border-radius: 15px;
-  background: white;
-  box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.3);
-  position: relative;
-}
-.card p {
-  font: 150px/440px Times New Roman, serif;
   text-align: center;
-}
-
-div.suit-hearts:before {
-  content: "♥";
-  font-size: 90px;
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  color: red;
-}
-
-div.suit-hearts:after {
-  content: "♥";
-  font-size: 90px;
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  color: red;
-  transform: rotate(180deg);
-}
-
-div.suit-diamonds:before {
-  content: "♦";
-  font-size: 90px;
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  color: red;
-}
-
-div.suit-diamonds:after {
-  content: "♦";
-  font-size: 90px;
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  color: red;
-  transform: rotate(180deg);
-}
-
-div.suit-spades:before {
-  content: "♠";
-  font-size: 90px;
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  color: black;
-}
-
-div.suit-spades:after {
-  content: "♠";
-  font-size: 90px;
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  color: black;
-  transform: rotate(180deg);
-}
-
-div.suit-clubs:before {
-  content: "♣";
-  font-size: 90px;
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  color: black;
-}
-
-div.suit-clubs:after {
-  content: "♣";
-  font-size: 90px;
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  color: black;
-  transform: rotate(180deg);
+  display: inline-block;
+  background: white;
+  margin: auto;
+  height: 400px;
+  font-size: 80px;
+  width: 250px;
+  padding: 20px;
+  padding-top: 180px;
+  border-radius: 5px;
+  position: relative;
+  &:before {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 80px;
+  }
+  &:after {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 80px;
+  }
+  &.spade:before,
+  &.spade:after {
+    content: \2660;
+  }
+  &.club:before,
+  &.club:after {
+    content: \2663;
+  }
+  &.heart:before,
+  &.heart:after {
+    content: \2665;
+    color: red;
+  }
+  &.diamond:before,
+  &.diamond:after {
+    content: \2666;
+    color: red;
+  }
 }
